@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class StoreModel {
   final String title;
   final String description;
-  final Image image;
+  final String image;
   StoreModel({
     required this.title,
     required this.description,
