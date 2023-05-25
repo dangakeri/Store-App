@@ -25,4 +25,29 @@ class ApiService {
       throw Exception('Something Went Wrong');
     }
   }
+
+  static Future<http.Response> update(int id, String title) async {
+    try {
+      var response = await http.patch(
+          Uri.parse('https://fakestoreapi.com/products/$id'),
+          body: {'title': title});
+      print(response.body);
+      return response;
+    } catch (e) {
+      throw Exception('Something Went Wrong');
+    }
+  }
+
+  static Future<http.Response> deleteData(
+    int id,
+  ) {
+    try {
+      var response =
+          http.delete(Uri.parse('https://fakestoreapi.com/products/$id'));
+
+      return response;
+    } catch (e) {
+      throw Exception('Something Went Wrong');
+    }
+  }
 }
