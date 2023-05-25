@@ -46,16 +46,28 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(snapshot.data![index].category,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                            )),
                         Image.network(
                           snapshot.data![index].image,
                           height: 200,
                           width: 200,
                         ),
                         Text(snapshot.data![index].title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
+                        const SizedBox(height: 10),
                         Text(snapshot.data![index].description),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text(snapshot.data![index].price),
+                            Text(snapshot.data![index].rating),
+                          ],
+                        )
                       ],
                     ),
                   );
